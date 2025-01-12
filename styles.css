@@ -1,0 +1,827 @@
+/* Unified CSS File */
+
+/* General body and layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px; /* Ensures content doesn't overlap with navbar */
+}
+
+/* Header and Navigation */
+.site-header {
+  background: #000000;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Arial", sans-serif;
+  transition: color 0.3s, text-shadow 0.3s;
+  text-shadow: 0 0 5px #fff, 0 0 10px #ff0, 0 0 20px #ff0, 0 0 30px #ff0,
+    0 0 40px #ff4500, 0 0 70px #ff4500, 0 0 80px #ff4500, 0 0 100px #ff4500;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #ff0;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0, 0 0 30px #ff0,
+    0 0 40px #ff4500, 0 0 70px #ff4500, 0 0 80px #ff4500, 0 0 100px #ff4500;
+}
+
+.connect-btn,
+.script-button,
+.simulate-button {
+  padding: 8px 16px;
+  background-color: #ff4500;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500;
+  float: right;
+  margin-right: 20px;
+  z-index: 1001;
+}
+
+.connect-btn:hover,
+.script-button:hover,
+.simulate-button:hover {
+  background-color: #ff6347;
+  box-shadow: 0 0 40px #ff4500, 0 0 50px #ff4500;
+}
+
+.connect-btn:disabled,
+.script-button:disabled,
+.simulate-button:disabled {
+  background-color: #8b4513;
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  /* Other styles for the flex container */
+}
+.banner {
+  width: 100%;
+}
+
+/* Ensure the container for the leaderboard takes up space and allows scrolling for tbody */
+.leaderboard-container {
+  max-height: 300px; /* Set a fixed height for the entire container */
+  border: 2px solid #00ffff;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.leaderboard-nft-wrap {
+  max-height: 820px; /* Set a fixed height for the entire container */
+  display: flex;
+  border: 2px solid #00ffff;
+  background-color: #222;
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  /* Other styles for the flex container */
+}
+
+/* Main leaderboard table styling */
+#leaderboard {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Ensures that columns are of equal width */
+}
+
+/* Styling for the header */
+#leaderboard thead {
+  background-color: #222;
+  color: #00ffff;
+  text-align: center;
+  font-weight: bold;
+  position: sticky; /* Keeps the header fixed */
+  top: 0; /* Stick to the top when scrolling */
+  z-index: 1; /* Ensure it stays on top of the table body */
+}
+
+/* Ensure the header doesn't shift due to the scrollbar in tbody */
+#leaderboard thead th {
+  padding: 10px;
+  white-space: nowrap;
+  width: calc(100% / 4); /* Adjust width to ensure even column division */
+  border: 1px solid #00ffff;
+}
+
+/* Styling for the body */
+#leaderboard tbody {
+  display: block;
+  max-height: 250px; /* Height of the scrollable area */
+  overflow-y: scroll; /* Vertical scrolling */
+  width: 100%;
+}
+
+/* Ensure both the header and body have equal column widths */
+#leaderboard thead th,
+#leaderboard tbody td {
+  width: 25%; /* Equal width for all columns */
+  text-align: center;
+  padding: 10px;
+  color: #00ffff;
+  background-color: #000;
+  border: 1px solid #00ffff;
+}
+/* Scrollbar styling to match the rest of the design */
+#leaderboard tbody::-webkit-scrollbar {
+  width: 8px;
+}
+
+#leaderboard tbody::-webkit-scrollbar-thumb {
+  background-color: #00ffff;
+  border-radius: 10px;
+}
+
+/* Ensure the table columns have the same width */
+#leaderboard thead,
+#leaderboard tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Body cells styling */
+#leaderboard tbody td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  background-color: #333;
+  white-space: nowrap;
+}
+
+/* Header column styling */
+#leaderboard th {
+  background-color: #444; /* Darker header background */
+}
+
+/* Ensure that the table rows have the same width */
+#leaderboard tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Ensures column alignment */
+}
+
+/* Leaderboard row hover effect for better visibility */
+#leaderboard tbody tr:hover {
+  background-color: #333; /* Slightly darker hover effect */
+  color: #00ffff;
+}
+
+/* Ensure both the header and body have equal column widths */
+#leaderboard th,
+#leaderboard td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  white-space: nowrap;
+}
+/* Scrollbar styling */
+#leaderboard tbody::-webkit-scrollbar {
+  width: 8px;
+}
+
+#leaderboard tbody::-webkit-scrollbar-thumb {
+  background-color: #00ffff;
+  border-radius: 10px;
+}
+/* Additional scrollbar styling for the leaderboard container */
+.leaderboard-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.leaderboard-container::-webkit-scrollbar-thumb {
+  background-color: #00ffff;
+  border-radius: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px;
+  grid-template-columns: 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px 75px;
+  width: 75%;
+}
+
+.item,
+.rand_column,
+.rand_row {
+  position: relative;
+  padding: 10px;
+  margin: 1.5px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #000000;
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #00f, 0 0 30px #00f,
+    0 0 40px #00f, 0 0 70px #00f, 0 0 100px #00f;
+}
+
+/* Ensure grid board images fit correctly */
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures images fit within their space while maintaining aspect ratio */
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #000; /* Background to match the grid */
+}
+
+.item-button {
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  right: 5px;
+  bottom: 5px;
+  padding: 1px 5px;
+  border-color: #00f;
+  background-color: #000000;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #00f, 0 0 30px #00f,
+    0 0 40px #00f, 0 0 70px #00f, 0 0 100px #00f;
+}
+
+table {
+  width: 25%;
+  border-collapse: collapse;
+  margin-right: 5px;
+  background-color: #000;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+th,
+td {
+  padding: 12px 20px;
+  border: 1px solid #333;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  text-align: left;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #00f, 0 0 30px #00f,
+    0 0 40px #00f, 0 0 70px #00f, 0 0 100px #00f;
+}
+
+th {
+  background-color: #111;
+}
+
+tbody tr:hover td {
+  background-color: #222;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #00f, 0 0 40px #00f;
+}
+
+td:hover {
+  background-color: #333;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #00f, 0 0 50px #00f;
+}
+
+/* Styling the scrollbar for the scoreboard-area */
+#scoreboard-area {
+  overflow-x: auto; /* Allows horizontal scrolling */
+  display: flex;
+  white-space: nowrap; /* Keeps inline-block elements in a single line */
+  width: 100%; /* Ensure it takes full available width */
+  height: 275px; /* Adjust height as necessary */
+}
+
+/* WebKit browsers (Chrome, Safari) */
+#scoreboard-area::-webkit-scrollbar {
+  height: 10px; /* Adjust height of the scrollbar */
+}
+
+#scoreboard-area::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Track color */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+#scoreboard-area::-webkit-scrollbar-thumb {
+  background: #00ffff; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+#scoreboard-area::-webkit-scrollbar-thumb:hover {
+  background: #008080; /* Color when hovering over the thumb */
+}
+
+/* Firefox */
+#scoreboard-area {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff #1a1a1a;
+}
+
+/* Edge and IE */
+#scoreboard-area {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+/* Optional: Custom scrollbar track and thumb for Edge and IE */
+#scoreboard-area::-ms-scrollbar {
+  height: 10px; /* Adjust height of the scrollbar */
+}
+
+#scoreboard-area::-ms-scrollbar-track {
+  background: #1a1a1a; /* Track color */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+#scoreboard-area::-ms-scrollbar-thumb {
+  background: #00ffff; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+#scoreboard-area::-ms-scrollbar-thumb:hover {
+  background: #008080; /* Color when hovering over the thumb */
+}
+
+.score_tile {
+  display: flex;
+  flex-direction: row;
+  max-width: 420px;
+  max-height: 250px;
+  border: 2px solid #00ffff; /* Bright cyan border color */
+  padding: 2px; /* Padding inside the border for space */
+  margin: 3px; /* Margin outside the border for space */
+  border-radius: 10px; /* Optional: Rounded corners for a smoother appearance */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: border-width 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box; /* Ensures padding and border are included in width/height */
+  width: fit-content;
+  height: fit-content;
+}
+
+@keyframes fadeBorder {
+  0% {
+    border-color: #ff00ff; /* Starting color (bright purple) */
+  }
+  50% {
+    border-color: transparent; /* Fade out */
+  }
+  100% {
+    border-color: #ff00ff; /* Fade back in */
+  }
+}
+.score_tile .score_wrapper {
+  width: 100%; /* Ensure child elements fit the parent */
+}
+.score_tile .container-other {
+  width: 250px;
+  height: 250px;
+  margin: 1px;
+}
+
+.score_tile:hover {
+  transform: scale(1.01);
+}
+
+.container-other {
+  display: none; /* Initially hidden */
+  animation: slideIn 0.3s forwards; /* Slide-in animation */
+  width: 250px;
+  height: 250px;
+  margin: 1px;
+}
+
+.score_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.team-scores,
+.score-summary {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 0;
+  align-items: center;
+}
+
+.team-scores div,
+.score-summary div {
+  flex: 1;
+  background-color: #444;
+  padding: 5px;
+  margin: 2px;
+  border-radius: 5px;
+  color: #00ffff;
+  box-sizing: border-box;
+}
+.away_score,
+.home_score {
+  height: 46px;
+  width: 45px;
+  box-sizing: border-box;
+  border: 1px solid #00ffff;
+  text-align: center;
+}
+
+.time {
+  height: 46px;
+  width: 60px;
+  box-sizing: border-box;
+  border: 1px solid #00ffff;
+  text-align: center;
+}
+.day {
+  height: 46px;
+  width: 0px;
+  box-sizing: border-box;
+  border: 1px solid #00ffff;
+  text-align: center;
+}
+
+.down-and-distance-tile {
+  height: 23px;
+  width: 50px;
+  box-sizing: border-box;
+  font-size: 0.5em;
+  text-align: left;
+  border: 1px solid #00ffff;
+}
+.last-play-tile {
+  height: 80px;
+  width: 90px;
+  box-sizing: border-box;
+  font-size: small;
+  text-align: left;
+  white-space: normal; /* Allows the text to wrap */
+  word-wrap: break-word; /* Break long words to wrap */
+  overflow-wrap: break-word; /* Break long words to wrap */
+  overflow: hidden; /* Ensure no overflow */
+  text-overflow: ellipsis; /* Adds ellipsis for overflowing text */
+  width: 100%; /* Ensure it uses the full width of the container */
+  font-size: 0.6em; /* Adjust font size if needed */
+  border: 1px solid #00ffff;
+}
+
+.home-team {
+  height: 46px;
+  width: 45px;
+  box-sizing: border-box;
+  border: 1px solid #00ffff;
+}
+.away-team {
+  height: 46px;
+  width: 45px;
+  box-sizing: border-box;
+  border: 1px solid #00ffff;
+}
+
+@keyframes slideIn {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 500px; /* Adjust as needed */
+    opacity: 1;
+  }
+}
+
+/* Visible state when active class is added */
+.score_tile.active .container-other {
+  display: flex;
+  flex-direction: column;
+}
+@keyframes fadeBorder {
+  0% {
+    border-color: #ff00ff; /* Starting color (bright purple) */
+  }
+  50% {
+    border-color: transparent; /* Fade out */
+  }
+  100% {
+    border-color: #ff00ff; /* Fade back in */
+  }
+}
+
+.current-name-and-score {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  max-width: 250px;
+  border: 2px solid #ff00ff; /* Initial border color */
+  animation: fadeBorder 2s infinite; /* Animation with a duration of 2s, looping infinitely */
+}
+
+.container-other-header,
+.row-plus-1,
+.row-plus-3,
+.row-plus-6 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* Space between rows */
+  font-size: 0.8em; /* Adjust the font size as needed */
+}
+.container-other-header div,
+.row-plus-1 div,
+.row-plus-3 div,
+.row-plus-6 div {
+  padding: 2px; /* Adjust padding as needed */
+  text-align: center; /* Center align text */
+  overflow: hidden; /* Ensure text does not overflow */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  font-size: 0.8em; /* Ensure all child divs inherit the font size */
+}
+
+.winning-name-other {
+  padding: 2px;
+  width: 175px;
+  font-size: 1em;
+  white-space: wrap;
+}
+.winning-score-other {
+  padding: 2px;
+  width: 75px;
+  font-size: 1.5em;
+  text-align: center; /* Center the text horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the text vertically */
+}
+
+.winning-name-away-plus-1,
+.spacer,
+.winning-name-home-plus-1,
+.winning-name-away-plus-3,
+.winning-name-home-plus-3,
+.winning-name-away-plus-6,
+.winning-name-home-plus-6 {
+  flex: 1;
+  padding: 2px;
+}
+
+.spacer {
+  flex: 0 0 40px;
+}
+.spacer-header {
+  width: 50px;
+}
+.away-winner-header,
+.home-winner-header {
+  width: 100px;
+}
+
+.line-row,
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5px 0;
+  padding: 5px;
+  border-radius: 5px; /* Add rounded corners for consistency */
+  height: 20px;
+}
+
+/* Existing styles with adjustments */
+.line-row .spread,
+.line-row .expected-outcome,
+.line-row .trended-outcome,
+.total-row .total {
+  color: #00ffff; /* Text color consistent with theme */
+  font-size: 15px; /* This remains for other elements */
+  text-align: center;
+  padding: 1px; /* Padding for better readability */
+  height: 25px;
+}
+
+/* This section is specific to the expected and trended outcome scores */
+.total-row .expected-outcome-score,
+.total-row .trended-outcome-score {
+  color: #00ffff; /* Keep the same color as per theme */
+  font-size: 0.8em; /* Adjust font size to be smaller */
+  text-align: center;
+  padding: 5px; /* Adjust padding for clarity */
+  display: flex;
+  flex-direction: column; /* Stack teams and scores vertically */
+  line-height: 1.2em; /* Ensure proper spacing between lines */
+  height: auto; /* Remove fixed height to allow the stack */
+}
+
+.line-row .spread,
+.total-row .total {
+  font-weight: bold; /* Bold for emphasis */
+}
+.footer-info {
+  border-color: 1px #00ffff;
+  width: 250px;
+  height: 40px;
+}
+/* Add these CSS classes to your styles.css */
+
+.game-in-progress {
+  border: 2px solid #39ff14; /* Neon green */
+  box-shadow: 0 0 8px #39ff14;
+}
+
+.game-redzone {
+  border: 2px solid #ff0000; /* Red */
+  box-shadow: 0 0 8px #ff0000;
+}
+
+.game-overtime {
+  border: 2px solid #ff0000; /* Red glowing */
+  box-shadow: 0 0 12px 4px #ff0000;
+}
+
+/* Add this to ensure the possession highlight is applied correctly */
+.away-team.possession-highlight,
+.home-team.possession-highlight {
+  background-color: #ffff00 !important; /* Bright yellow background */
+  color: #000000 !important; /* Ensure text is readable on yellow background */
+  border: 2px solid #ffff00 !important; /* Bright yellow border */
+}
+#wallet-section {
+  text-align: center;
+  margin: 20px;
+}
+
+#nft-display-section {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.nft-item {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #00ffff;
+  border-radius: 8px;
+  background-color: #111; /* Match leaderboard background */
+}
+
+.nft-image img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  object-fit: cover; /* Maintain aspect ratio */
+  border: 1px solid #00ffff;
+  border-radius: 5px;
+}
+
+.nft-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal adjustments for better alignment */
+.modal-content {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #00ffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 50%; /* Reduce width for better focus */
+  margin: auto;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.staked {
+  background-color: #4caf50; /* Green to represent staked */
+  color: white;
+  font-weight: bold;
+}
+
+.highlighted {
+  background-color: #ffdd57; /* Yellow for selected grid */
+  color: black;
+}
+
+.nft-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.nft-image img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.nft-token-id,
+.nft-approve-button,
+.nft-unstake-button {
+  margin-right: 10px;
+}
+
+.nft-status {
+  font-size: 14px;
+  color: #ffdd57;
+  font-weight: bold;
+}
+.nft-token-id {
+  font-size: 14px;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.nft-approve-button button:hover,
+.nft-unstake-button button:hover {
+  background-color: #ff6347;
+}
+
+#nft-list {
+  max-height: 500px; /* Set a fixed height for the NFT display section */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  border: 1px solid #00ffff; /* Optional: A border to visually separate */
+  padding: 10px; /* Optional: Padding for inner spacing */
+  background-color: #111; /* Match leaderboard background for consistency */
+  border-radius: 8px; /* Optional: Rounded corners for a clean look */
+}
+/* Default gray shadow for all staked cells */
+.grid-cell.occupied {
+  box-shadow: inset 0 0 10px gray;
+  transition: box-shadow 0.3s;
+}
+
+/* Highlight effect when hovered */
+.grid-cell.highlight {
+  box-shadow: 0 0 10px 5px yellow;
+  transition: box-shadow 0.3s;
+}

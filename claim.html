@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claim Your Winnings - GameFi Lottery</title>
+    <link rel="stylesheet" href="claim.css" />
+    <!-- Include ethers.js -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <!-- Include your JavaScript -->
+    <script src="claim.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header class="header">
+        <h1>🎲 theGrid Rewards Center 🎰</h1>
+        <p>Bring your NFTs to the table and see if you're a winner!</p>
+      </header>
+
+      <!-- Wallet Connection Section -->
+      <section class="connect-section">
+        <button id="connectWalletButton" class="btn-primary">
+          Connect Wallet
+        </button>
+        <p id="walletAddress" class="info-text"></p>
+      </section>
+
+      <!-- Contract Balance Section -->
+      <section id="balanceSection" class="balance-section">
+        <h2>💰 Payout Contract Balance 💰</h2>
+        <p id="contractBalance" class="info-text">
+          Connect Wallet to see Unclaimed Payouts...
+        </p>
+      </section>
+
+      <!-- Game Results Section -->
+      <section id="resultsSection" class="results-section">
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay">
+          <p>🔄 Fetching data from the blockchain... Please wait. 🔄</p>
+        </div>
+        <h2>🏆 Game Results and Claimable Winnings 🏆</h2>
+        <div id="resultsContainer" class="results-container"></div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <p>Powered by theGrid | Thanks for Playing and Come Again!</p>
+      </footer>
+    </div>
+  </body>
+</html>
